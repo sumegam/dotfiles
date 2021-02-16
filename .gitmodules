@@ -1,0 +1,3 @@
+[submodule "awesome/awesome-widgets"]
+	path = awesome/awesome-widgets
+	url = https://github.com/sumegam/awesome-widgets
