@@ -25,7 +25,7 @@ local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc"
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
-local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+local ram_widget = require("awesome-widgets.ram-widget.ram-widget")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
