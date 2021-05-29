@@ -21,7 +21,7 @@ require("awful.hotkeys_popup.keys")
 awful.util.spawn("nm-applet")
 
 -- Widgets
-local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
+local volume_widget = require("awesome-widgets.volume-widget.volume-widget")
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
@@ -175,6 +175,9 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+-- Set widget options
+volume_delta = 2
+
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
@@ -222,11 +225,8 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-	    volumearc_widget({
-                main_color = '#af13f7',
-                mute_color = '#ff0000',
-                thickness = 2,
-                height = 25
+	    volume_widget({
+                volume_delta = volume_delta
             }),
 	    batteryarc_widget({
                 show_current_level = true,
@@ -360,11 +360,11 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- Custom key bindings
-    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer sset Master 2%-") end,
-              {description = "decrease master volume by 2", group = "sound"}),
-    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer sset Master 2%+") end,
-              {description = "increase master volume by 2", group = "sound"}),
-    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle") end,
+    awful.key({ }, "XF86AudioLowerVolume", function() volume_widget:decrease_volume() end,
+              {description = "decrease master volume by " ..volume_delta, group = "sound"}),
+    awful.key({ }, "XF86AudioRaiseVolume", function () volume_widget:increase_volume() end,
+              {description = "increase master volume by " ..volume_delta, group = "sound"}),
+    awful.key({ }, "XF86AudioMute", function () volume_widget:toggle_volume() end,
               {description = "un/mute master", group = "sound"}),
     awful.key({ }, "#232", function () awful.util.spawn("xbacklight -dec 10") end,
               {description = "decrease backlight by 5%", group = "display"}),
