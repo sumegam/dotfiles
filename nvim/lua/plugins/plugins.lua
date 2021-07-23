@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
   -- Syntax hughlighting
   use {
     'nvim-treesitter/nvim-treesitter',
+    branch = '0.5-compat',
     run = ':TSUpdate'
   }
 
