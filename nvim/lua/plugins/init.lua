@@ -12,3 +12,6 @@ require('plugins.nvim-treesitter')
 
 -- Require nvim-compe options
 require('plugins.nvim-compe')
+
+-- Require material options
+require('plugins.material-nvim')
