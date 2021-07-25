@@ -7,11 +7,12 @@ return require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
+  use 'ray-x/lsp_signature.nvim' -- Lsp signature hint when you type
 
   -- Autocompletion
   use 'hrsh7th/nvim-compe'
 
-  -- Syntax hughlighting
+  -- Syntax highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
     branch = '0.5-compat',
