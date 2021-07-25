@@ -15,3 +15,6 @@ require('plugins.nvim-compe')
 
 -- Require material options
 require('plugins.material-nvim')
+
+-- Require lualine options
+require('plugins.lualine')
