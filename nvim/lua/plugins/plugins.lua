@@ -37,4 +37,10 @@ return require('packer').startup(function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   }
+
+  -- For commenting out code
+  use "b3nj5m1n/kommentary"
+
+  -- Neovim treesitter plugin for setting the commentstring based on the cursor location in a file
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 end)

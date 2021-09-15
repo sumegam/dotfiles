@@ -21,3 +21,6 @@ require('plugins.lualine')
 
 -- Require trouble options
 require('plugins.trouble')
+
+-- Require kommentary options
+require('plugins.kommentary')
