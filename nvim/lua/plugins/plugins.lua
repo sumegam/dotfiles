@@ -31,4 +31,10 @@ return require('packer').startup(function(use)
 	'hoob3rt/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons'
   }
+
+  -- Trouble for prettier diagnostics
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
 end)

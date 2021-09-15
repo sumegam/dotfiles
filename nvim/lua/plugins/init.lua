@@ -18,3 +18,6 @@ require('plugins.material-nvim')
 
 -- Require lualine options
 require('plugins.lualine')
+
+-- Require trouble options
+require('plugins.trouble')
