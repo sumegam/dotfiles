@@ -43,4 +43,7 @@ return require('packer').startup(function(use)
 
   -- Neovim treesitter plugin for setting the commentstring based on the cursor location in a file
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  -- Auto pairs
+  use "steelsojka/pears.nvim"
 end)

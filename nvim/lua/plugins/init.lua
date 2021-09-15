@@ -24,3 +24,6 @@ require('plugins.trouble')
 
 -- Require kommentary options
 require('plugins.kommentary')
+
+-- Require pairs options
+require('plugins.pears')
