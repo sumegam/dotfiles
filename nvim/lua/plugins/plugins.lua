@@ -46,4 +46,7 @@ return require('packer').startup(function(use)
 
   -- Auto pairs
   use "steelsojka/pears.nvim"
+
+  -- Indentation guide
+  use "lukas-reineke/indent-blankline.nvim"
 end)

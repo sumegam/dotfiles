@@ -27,3 +27,6 @@ require('plugins.kommentary')
 
 -- Require pairs options
 require('plugins.pears')
+
+-- Require indent-blankline options
+require('plugins.indent-blankline')
