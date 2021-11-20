@@ -26,7 +26,8 @@ return require('packer').startup(function(use)
   }
 
   -- Themes and styling
-  use 'marko-cerovac/material.nvim'
+  -- use 'marko-cerovac/material.nvim'
+  use 'navarasu/onedark.nvim'
   use {
 	'hoob3rt/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons'

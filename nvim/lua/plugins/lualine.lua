@@ -1,7 +1,7 @@
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'material-nvim',
+    theme = 'onedark',
     component_separators = { '', '' },
     section_separators = { '', '' },
     disabled_filetypes = { }

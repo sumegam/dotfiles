@@ -14,7 +14,10 @@ require('plugins.nvim-treesitter')
 require('plugins.nvim-compe')
 
 -- Require material options
-require('plugins.material-nvim')
+-- require('plugins.material-nvim')
+
+-- Require onedark options
+require('plugins.onedark')
 
 -- Require lualine options
 require('plugins.lualine')
