@@ -33,3 +33,6 @@ require('plugins.pears')
 
 -- Require indent-blankline options
 require('plugins.indent-blankline')
+
+-- Require telescope options
+require('plugins.telescope')

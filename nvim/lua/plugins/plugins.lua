@@ -25,11 +25,17 @@ return require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons'
   }
 
+  -- Fuzzy search
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   -- Themes and styling
   -- use 'marko-cerovac/material.nvim'
   use 'navarasu/onedark.nvim'
   use {
-	'hoob3rt/lualine.nvim',
+    'hoob3rt/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons'
   }
 
