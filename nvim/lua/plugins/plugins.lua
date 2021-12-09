@@ -56,4 +56,12 @@ return require('packer').startup(function(use)
 
   -- Indentation guide
   use "lukas-reineke/indent-blankline.nvim"
+
+  -- Markdown
+  use { -- Markdown preview plugin for (neo)vim
+    'iamcco/markdown-preview.nvim',
+    run = function() vim.fn['mkdp#util#install']() end,
+    ft = {'markdown'},
+    cmd = 'MarkdownPreview'
+  }
 end)
