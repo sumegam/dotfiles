@@ -3,7 +3,6 @@ vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = tr
 
 -- vim.g.nvim_tree_side = 'left' -- left by default
 -- vim.g.nvim_tree_width = 40 -- 30 by default, can be width_in_columns or 'width_in_percent%'
-vim.g.nvim_tree_gitignore = 1 -- 0 by default
 vim.g.nvim_tree_quit_on_open = 0 -- 0 by default, closes the tree when you open a file
 vim.g.nvim_tree_indent_markers = 1 -- 0 by default, this option shows indent markers when folders are open
 vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
@@ -72,6 +71,7 @@ require('nvim-tree').setup {
 	open_on_tab = true, -- open the tree when entering a new tab and the tree was previously open
 	update_cwd = true, -- update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
 	hijack_cursor = false, -- when moving cursor in the tree, will position the cursor at the start of the file on the current line
+  nvim_tree_gitignore = true, 
 	ignore = { '.git', 'node_modules', '.cache' }, -- empty by default
 	hide_dotfiles = true, -- 0 by default, this option hides files and folders starting with a dot `.`
 	ignore_ft_on_open = { 'startify', 'dashboard' }, -- empty by default, don't auto open tree on specific filetypes.
