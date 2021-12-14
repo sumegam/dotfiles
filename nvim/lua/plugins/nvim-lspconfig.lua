@@ -101,27 +101,32 @@ nvim_lsp['jsonls'].setup {
   }
 }
 
+-- Diagnostics config
+vim.diagnostic.config({
+    virtual_text = false, -- Disable virtual text
+    signs = true,
+    underline = true,
+    update_in_insert = true,
+    severity_sort = true,
+})
+
 -- Set custom diagnostic signs (the same as in `trouble.nvim` plugin)
 vim.fn.sign_define(
-  'LspDiagnosticsSignError',
-  {text = '', numhl = 'LspDiagnosticsDefaultError'}
-)
-vim.fn.sign_define(
-  'LspDiagnosticsSignWarning',
-  {text = '', numhl = 'LspDiagnosticsDefaultWarning'}
-)
-vim.fn.sign_define(
-  'LspDiagnosticsSignInformation',
-  {text = '', numhl = 'LspDiagnosticsDefaultInformation'}
-)
-vim.fn.sign_define(
-  'LspDiagnosticsSignHint',
-  {text = '', numhl = 'LspDiagnosticsDefaultHint'}
+  'DiagnosticSignError',
+  {text = '', texthl = 'DiagnosticError', numhl = 'DiagnosticError'}
 )
 
--- Disable diagnostics virtual text
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = false,
-  }
+vim.fn.sign_define(
+  'DiagnosticSignWarning',
+  {text = '', texthl = 'DiagnosticWarning', numhl = 'DiagnosticWarning'}
+)
+
+vim.fn.sign_define(
+  'DiagnosticSignInformation',
+  {text = '', texthl = 'DiagnosticInformation', numhl = 'DiagnosticInformation'}
+)
+
+vim.fn.sign_define(
+  'DiagnosticSignHint',
+  {text = '', texthl = 'DiagnosticHint', numhl = 'DiagnosticHint'}
 )
