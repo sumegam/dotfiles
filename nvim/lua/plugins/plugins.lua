@@ -64,4 +64,15 @@ return require('packer').startup(function(use)
     ft = {'markdown'},
     cmd = 'MarkdownPreview'
   }
+
+  -- Git support
+  use { -- Git signs written in pure lua
+    'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+  use { -- Magit for neovim
+    'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+  use 'sindrets/diffview.nvim'
 end)

@@ -36,3 +36,12 @@ require('plugins.indent-blankline')
 
 -- Require telescope options
 require('plugins.telescope')
+
+-- Require diffview options
+require('plugins.diffview')
+
+-- Require gitsigns options
+require('plugins.gitsigns')
+
+-- Require neogit options
+require('plugins.neogit')
