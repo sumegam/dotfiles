@@ -26,6 +26,7 @@ local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batterya
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 local ram_widget = require("awesome-widgets.ram-widget.ram-widget")
+local disk_widget = require("awesome-widgets.disk-widget.disk-widget")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -233,6 +234,7 @@ awful.screen.connect_for_each_screen(function(s)
 		main_color = '#af13f7',
             }),
 	    ram_widget(),
+      disk_widget(),
 	    brightness_widget({
                 get_brightness_cmd = 'xbacklight -get',
             }),

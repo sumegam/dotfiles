@@ -21,6 +21,16 @@ require('telescope').setup{
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
         ["<C-h>"] = "which_key"
       }
+    },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--hidden",
+      "--smart-case"
     }
   },
   pickers = {
