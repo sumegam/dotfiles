@@ -7,9 +7,6 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_setup_file = false,
   sort_by = "name",
   root_dirs = {},
   prefer_startup_root = false,
@@ -115,7 +112,6 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     update_root = false,
     ignore_list = {},
   },
-  ignore_ft_on_setup = {},
   system_open = {
     cmd = "",
     args = {},
@@ -150,7 +146,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     show_on_dirs = true,
     show_on_open_dirs = true,
     timeout = 400,
