@@ -24,7 +24,7 @@ awful.util.spawn("nm-applet")
 local volume_widget = require("awesome-widgets.volume-widget.volume-widget")
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
-local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local screen_brightness_widget = require("awesome-widgets.screen-brightness-widget.screen-brightness-widget")
 local ram_widget = require("awesome-widgets.ram-widget.ram-widget")
 local disk_widget = require("awesome-widgets.disk-widget.disk-widget")
 
@@ -120,6 +120,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+local cal = wibox.widget.calendar.month(os.date('*t'))
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -178,6 +179,7 @@ screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Set widget options
 volume_delta = 2
+brightness_delta = 5
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
@@ -226,19 +228,22 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-	    volume_widget({
+      	    volume_widget({
                 volume_delta = volume_delta
             }),
-	    batteryarc_widget({
+      	    batteryarc_widget({
                 show_current_level = true,
-		main_color = '#af13f7',
+            		main_color = '#af13f7',
             }),
-	    ram_widget(),
-      disk_widget(),
-	    brightness_widget({
-                get_brightness_cmd = 'xbacklight -get',
+      	    ram_widget(),
+            disk_widget({
+              width = 500,
+              main_filesystem = '/dev/sdb3'
             }),
-	    cpu_widget({
+	          screen_brightness_widget({
+                brightness_delta = brightness_delta,
+            }),
+            cpu_widget({
                 width = 70,
                 step_width = 2,
                 step_spacing = 0,
@@ -246,6 +251,7 @@ awful.screen.connect_for_each_screen(function(s)
             }),
             wibox.widget.systray(),
             mytextclock,
+            cal,
             s.mylayoutbox,
         },
     }
@@ -368,10 +374,10 @@ globalkeys = gears.table.join(
               {description = "increase master volume by " ..volume_delta, group = "sound"}),
     awful.key({ }, "XF86AudioMute", function () volume_widget:toggle_volume() end,
               {description = "un/mute master", group = "sound"}),
-    awful.key({ }, "#232", function () awful.util.spawn("xbacklight -dec 10") end,
-              {description = "decrease backlight by 5%", group = "display"}),
-    awful.key({ }, "#233", function () awful.util.spawn("xbacklight -inc 10") end,
-              {description = "increase backlight by 5%", group = "display"}),
+    awful.key({ }, "#232", function () screen_brightness_widget:decrease_brightness() end,
+              {description = "decrease backlight by " .. brightness_delta .. "%", group = "display"}),
+    awful.key({ }, "#233", function () screen_brightness_widget:increase_brightness() end,
+              {description = "increase backlight by " .. brightness_delta .. "%", group = "display"}),
     awful.key({ }, "#173", function () awful.util.spawn("playerctl previous") end,
               {description = "previous song", group = "multimedia"}),
     awful.key({ }, "#171", function () awful.util.spawn("playerctl next") end,
