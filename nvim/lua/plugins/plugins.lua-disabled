@@ -1,0 +1,27 @@
+-- return {
+--   -- Trouble for prettier diagnostics
+--   {
+--     "folke/trouble.nvim",
+--     requires = "kyazdani42/nvim-web-devicons",
+--   },
+
+--   -- Markdown
+--   { -- Markdown preview plugin for (neo)vim
+--     'iamcco/markdown-preview.nvim',
+--     run = function() vim.fn['mkdp#util#install']() end,
+--     ft = {'markdown'},
+--     cmd = 'MarkdownPreview'
+--   },
+
+
+--   -- {
+--   --   'Exafunction/codeium.vim',
+--   --   config = function ()
+--   --     -- Change '<C-g>' here to any keycode you like.
+--   --     vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+--   --     vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+--   --     vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+--   --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+--   --   end
+--   -- }
+-- }

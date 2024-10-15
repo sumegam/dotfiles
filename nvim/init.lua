@@ -1,4 +1,4 @@
-require('plugins')
+require("config.lazy")
 require('general')
 
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
