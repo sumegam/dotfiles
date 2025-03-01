@@ -1,3 +1,6 @@
 [submodule "awesome/awesome-widgets"]
 	path = awesome/awesome-widgets
 	url = https://github.com/sumegam/awesome-widgets
+[submodule "hyprland-dotfiles"]
+	path = hyprland-dotfiles
+	url = git@github.com:sumegam/hyprland-dotfiles.git
