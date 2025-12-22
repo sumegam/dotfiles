@@ -4,3 +4,6 @@
 [submodule "hyprland-dotfiles"]
 	path = hyprland-dotfiles
 	url = git@github.com:sumegam/hyprland-dotfiles.git
+[submodule "quickshell"]
+	path = quickshell
+	url = git@github.com:sumegam/quickshell.git
